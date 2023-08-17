@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+  </head>
+  <body>  
+     
+    <div class="container">
+      
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output-screen">
+            <button style="background-color: red;" onclick="Clear()"><h2>Clear</h2></button>
+            <button style="background-color: red;" onclick="del()"><h2>Del</h2></button>
+            <button onclick="display('%')"><h2>%</h2></button>
+            <button onclick="display('/')"><h2>/</h2></button>
+            <button onclick="display('7')"><h2>7</h2></button>
+            <button onclick="display('8')"><h2>8</h2></button>
+            <button onclick="display('9')"><h2>9</h2></button>
+            <button onclick="display('*')"><h2>*</h2></button>
+            <button onclick="display('4')"><h2>4</h2></button>
+            <button onclick="display('5')"><h2>5</h2></button>
+            <button onclick="display('6')"><h2>6</h2></button>
+            <button onclick="display('-')"><h2>-</h2></button>
+            <button onclick="display('1')"><h2>1</h2></button>
+            <button onclick="display('2')"><h2>2</h2></button>
+            <button onclick="display('3')"><h2>3</h2></button>
+            <button onclick="display('+')"><h2>+</h2></button>
+            <button onclick="display('.')"><h2>.</h2></button>
+            <button onclick="display('0')"><h2>0</h2></button>
+            <button style="background-color:green" onclick="calculate()" class="equal"><h2>=</h2></button>
+          </div>
+
+      </div>
+      <script>
+          let outputScreen=document.getElementById("output-screen");
+          function display(num)
+            {
+              outputScreen.value+=num;
+            }
+          function calculate()
+          {
+              try
+                { 
+                  outputScreen.value=eval(outputScreen.value);
+                }
+              catch(err)
+              {
+                alert("INVALID")
+              }
+          }
+          function Clear(){
+            outputScreen.value="";
+          }
+          function del(){
+            outputScreen.value=outputScreen.value.slice(0,-1)
+          }
+
+      </script>
+   
+    
+  </body>
+</html>
